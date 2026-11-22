@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Horizonte Viajes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicacion web desarrollada en React - **Desarrollo Frontend II (PFY2202)**
 
-## Available Scripts
+La plataforma permite explorar destinos turisticos y planificar itinerarios combinando vuelos y hoteles mediante la integracion simultanea de una API REST Mock y una API GraphQL Mock.
 
-In the project directory, you can run:
+Enlace en vivo (GitHub Pages): https://sebastiangis.github.io/viajes-sebastian-figueroa-PFY2202/
 
-### `npm start`
+## Caracteristicas principales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Consumo de API REST Mock:** Listado general de destinos (pais, descripcion y actividades populares) obtenido mediante `fetch` desde `/api/destinos` con filtrado dinamico por pais.
+* **Consumo de API GraphQL Mock:** Consulta de vuelos y hoteles disponibles por destino (aerolineas, tarifas, fechas y disponibilidad) utilizando **Apollo Client** (`gql` y `useQuery`).
+* **Simulacion de Backend con MSW:** Interceptacion de solicitudes HTTP y GraphQL directamente en el navegador mediante **Mock Service Worker (MSW v2)** con tiempos de respuesta simulados y manejo de errores.
+* **Enrutamiento SPA:** Navegacion sin recargas de pagina con **React Router DOM**, rutas dinamicas (`/destino/:id`) y ruta comodin 404.
+* **Planificacion de Itinerario:** Seleccion interactiva de vuelo y hotel con calculo automatico del total estimado.
+* **Diseno Responsivo:** Interfaz adaptable a dispositivos moviles y escritorio construida con **Tailwind CSS**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias del proyecto
 
-### `npm test`
+* React 18 (Componentes Funcionales y Hooks: `useState`, `useEffect`)
+* React Router DOM
+* Apollo Client & GraphQL
+* Mock Service Worker (MSW v2)
+* Tailwind CSS v3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura del proyecto
 
-### `npm run build`
+```text
+public/
+ └── mockServiceWorker.js    # Service Worker generado por MSW para interceptar peticiones
+src/
+ ├── components/
+ │    ├── DestinoCard.js     # Tarjeta reutilizable para cada destino (datos REST)
+ │    ├── HotelCard.js       # Tarjeta reutilizable para opciones de alojamiento (datos GraphQL)
+ │    ├── Layout.js          # Estructura maestra con barra de navegacion y pie de pagina
+ │    └── VueloCard.js       # Tarjeta reutilizable para opciones de vuelo (datos GraphQL)
+ ├── mocks/
+ │    ├── browser.js         # Configuracion del Service Worker en el navegador
+ │    └── handlers.js        # Definicion de endpoints REST (/api/destinos) y consultas GraphQL
+ ├── pages/
+ │    ├── Destinos.js        # Vista principal con listado de destinos y filtro por pais
+ │    └── DestinoDetalle.js  # Vista de detalle con vuelos, hoteles y resumen de seleccion
+ ├── App.js                  # Configuracion de rutas con BrowserRouter
+ ├── index.css               # Directivas de Tailwind CSS y clases componentes (@apply)
+ └── index.js                # Inicializacion de MSW y proveedor global ApolloProvider
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalacion y Ejecucion Local
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clonar el repositorio:
+   ```bash
+   git clone [https://github.com/SebastianGIS/viajes-sebastian-figueroa-PFY2202.git](https://github.com/SebastianGIS/viajes-sebastian-figueroa-PFY2202.git)
+   ```
+2. Ingresar al directorio del proyecto:
+   ```bash
+   cd viajes-sebastian-figueroa-PFY2202
+   ```
+3. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+4. Iniciar el servidor de desarrollo:
+   ```bash
+   npm start
+   ```
+5. Abrir `http://localhost:3000` en el navegador.
