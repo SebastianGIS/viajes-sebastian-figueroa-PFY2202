@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/viajes-sebastian-figueroa-PFY2202/static/css/main.b43ea574.css",
+    "main.js": "/viajes-sebastian-figueroa-PFY2202/static/js/main.9b710040.js",
+    "static/js/209.7cda78b3.chunk.js": "/viajes-sebastian-figueroa-PFY2202/static/js/209.7cda78b3.chunk.js",
+    "static/js/699.6cfefdc0.chunk.js": "/viajes-sebastian-figueroa-PFY2202/static/js/699.6cfefdc0.chunk.js",
+    "static/js/966.e9440409.chunk.js": "/viajes-sebastian-figueroa-PFY2202/static/js/966.e9440409.chunk.js",
+    "index.html": "/viajes-sebastian-figueroa-PFY2202/index.html",
+    "main.b43ea574.css.map": "/viajes-sebastian-figueroa-PFY2202/static/css/main.b43ea574.css.map",
+    "main.9b710040.js.map": "/viajes-sebastian-figueroa-PFY2202/static/js/main.9b710040.js.map",
+    "209.7cda78b3.chunk.js.map": "/viajes-sebastian-figueroa-PFY2202/static/js/209.7cda78b3.chunk.js.map",
+    "699.6cfefdc0.chunk.js.map": "/viajes-sebastian-figueroa-PFY2202/static/js/699.6cfefdc0.chunk.js.map",
+    "966.e9440409.chunk.js.map": "/viajes-sebastian-figueroa-PFY2202/static/js/966.e9440409.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b43ea574.css",
+    "static/js/main.9b710040.js"
+  ]
+}
